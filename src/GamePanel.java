@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Line2D;
 import java.util.List;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -93,9 +94,25 @@ public class GamePanel extends JPanel {
         drawFood(g);
     }
     private  void drawBackground(Graphics g){
+        List<Line2D.Float> lines = new ArrayList<>();
+
         // draw the background
         g.setColor(Color.green);
         g.fillRect(0,0, getWidth(),getHeight());
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setColor(Color.BLACK);
+
+        for (int i = 40; i <= 800; i += 40) {
+            lines.add(new Line2D.Float(i, 0, i, 800));
+        }
+
+        for (int i = 40; i <= 800; i += 40) {
+            lines.add(new Line2D.Float(0, i, 800, i));
+        }
+
+        for (Line2D line : lines) {
+            g2d.draw(line);
+        }
 
     }
 
