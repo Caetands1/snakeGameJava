@@ -5,7 +5,6 @@ import java.util.LinkedList;
 public class Snake {
 
     private LinkedList<Point> snakeParts;
-    public int BLOCK_SIZE = GamePanel.BLOCK_SIZE;
 
     public Snake() {
 
@@ -23,6 +22,7 @@ public class Snake {
     }
 
     public void moveSnake(Direction snakeDirection) {
+        // System.out.println("Snake moved to: x = " + snakeParts.peekFirst().x + "y = " + snakeParts.peekFirst().y); // DEBUG: Prints out the snake's location
         switch (snakeDirection) {
             case UP:
                 snakeParts.addFirst(new Point((int)snakeParts.getFirst().getX(), (int)snakeParts.getFirst().getY()-1));
