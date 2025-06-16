@@ -2,8 +2,8 @@ import java.awt.Point;
 import java.util.Random;
 
 public class Food {
-    private Random randint = new Random();
-    private Point location = new Point();
+    private final Random randint = new Random();
+    private final Point location = new Point();
 
     final int maxCOORD = SnakeGame.width / GamePanel.BLOCK_SIZE;
     private final Snake snake;

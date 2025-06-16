@@ -135,7 +135,7 @@ public class GamePanel extends JPanel {
             food.setLocation();
             snake.growSnake(snakeDirection);
             score++;
-            scoreLabel.setText("Score: " + Integer.toString(score));
+            scoreLabel.setText("Score: " + score);
         }
         // Checks for snake colliding with boundary
         if ( (!(snakeBody.peekFirst().y >= 0) || !(snakeBody.peekFirst().y <= borderBoundary)) || (!(snakeBody.peekFirst().x >= 0) || !(snakeBody.peekFirst().x <= borderBoundary)) ) {
